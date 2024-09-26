@@ -15,7 +15,7 @@ export default function Navbar() {
     <BlurFade
       delay={0.4}
       yOffset={-6}
-      className='w-full fixed z-30 px-4 md:px-8'
+      className='w-full fixed top-0 z-30 px-4 md:px-8'
     >
       <nav className='w-full md:flex justify-between  items-center mt-8 relative '>
         <div className='flex justify-between items-center'>
@@ -33,6 +33,7 @@ export default function Navbar() {
             )}
           </div>
         </div>
+        {/* mobile navbar */}
         {click && (
           <BlurFade
             delay={0.01}
@@ -53,6 +54,7 @@ export default function Navbar() {
             </ul>
           </BlurFade>
         )}
+        {/* desktop navbar */}
         <div className='hidden md:flex border backdrop-blur-sm  bg-background-secondary/50 py-4 px-8 gap-4 rounded-full'>
           {DATA.navbar.map((item) => (
             <Link

@@ -76,6 +76,35 @@ export const DATA = {
       'Multilingual support',
     ],
   },
+  howItWorksSection: {
+    title: 'Top-notch design',
+    description: (
+      <>
+        Top–notch designs,
+        <br /> delivered at your doorstep
+      </>
+    ),
+    cards: [
+      {
+        image: '/icon_01.png',
+        title: 'Tell us your vision',
+        description:
+          'Choose a plan and share your design project details with us: we’re here to listen.',
+      },
+      {
+        image: '/icon_02.png',
+        title: 'Receive the magic',
+        description:
+          'Sit back and relax: our expert designers will turn your vision into reality.',
+      },
+      {
+        image: '/icon_03.png',
+        title: 'Get ongoing support',
+        description:
+          'Your subscription ensures you have continuous access to our design team.',
+      },
+    ],
+  },
   navbar: [
     {
       id: 1,

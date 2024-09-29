@@ -14,6 +14,7 @@ import {
   CardDescription,
   CardTitle,
 } from '@/components/ui/card';
+import { Cinzel } from 'next/font/google';
 
 const DURATION = 0.2;
 export default function Home() {
@@ -152,7 +153,7 @@ export default function Home() {
                   </Card>
 
                   <Card className='relative w-full'>
-                    <CardContent className='flex justify-between p-4 gap-2 '>
+                    <CardContent className='flex justify-between p-8 gap-2 '>
                       <div className='flex flex-col gap-2 justify-center'>
                         <CardTitle className='text-[26px] text-white'>
                           {DATA.featurs.subcards[0].title}
@@ -174,9 +175,9 @@ export default function Home() {
               </BlurFade>
             </div>
 
-            <div className='hidden md:grid md:grid-cols-4 gap-4  max-w-2xl mx-auto w-full place-items-center'>
+            <div className='hidden md:grid  md:grid-cols-4 gap-4  max-w-2xl mx-auto w-full place-items-center'>
               {DATA.featurs.badge.map((item, id) => (
-                <Badge key={id} className=' p-2  text-center rounded'>
+                <Badge key={id} className=' p-2 border   text-center rounded'>
                   {item}
                 </Badge>
               ))}
@@ -184,7 +185,43 @@ export default function Home() {
           </div>
         </section>
         <section id={'how-is-works'}>
-          <div className='relative top-28'>How is work</div>
+          <div className='relative top-28'>
+            <div className='flex flex-col justify-center items-center'>
+              <Introduce>
+                <BlurFade delay={DURATION} inView>
+                  <h1 className='text-base uppercase text-[#DDFF00]'>
+                    {DATA.howItWorksSection.title}
+                  </h1>
+                </BlurFade>
+                <BlurFade delay={DURATION * 2} inView>
+                  <p className='text-2xl lg:text[44px] text-secondary-foreground'>
+                    {DATA.howItWorksSection.description}
+                  </p>
+                </BlurFade>
+              </Introduce>
+              <div className='w-full grid gap-4 lg:grid-cols-3'>
+                {DATA.howItWorksSection.cards.map((item, idx) => (
+                  <Card key={idx} className='p-8 space-y-4 flex flex-col justify-center'>
+                    <Image
+                      src={item.image}
+                      width={100}
+                      height={100}
+                      alt={item.title}
+                      className='rounded-full'
+                    />
+                    <CardContent className='space-y-4 p-0'>
+                      <CardTitle className='text-white text-lg'>
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className='text-base text-foreground'>
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
         <section id={'testimonail'}>
           <div className='relative top-28'>Testmonail</div>

@@ -14,7 +14,6 @@ import {
   CardDescription,
   CardTitle,
 } from '@/components/ui/card';
-import { Cinzel } from 'next/font/google';
 
 const DURATION = 0.2;
 export default function Home() {
@@ -185,7 +184,7 @@ export default function Home() {
           </div>
         </section>
         <section id={'how-is-works'}>
-          <div className='relative top-28'>
+          <div className='relative top-28 mb-8'>
             <div className='flex flex-col justify-center items-center'>
               <Introduce>
                 <BlurFade delay={DURATION} inView>
@@ -201,7 +200,10 @@ export default function Home() {
               </Introduce>
               <div className='w-full grid gap-4 lg:grid-cols-3'>
                 {DATA.howItWorksSection.cards.map((item, idx) => (
-                  <Card key={idx} className='p-8 space-y-4 flex flex-col justify-center'>
+                  <Card
+                    key={idx}
+                    className='p-8 space-y-4 flex flex-col justify-center'
+                  >
                     <Image
                       src={item.image}
                       width={100}
@@ -224,7 +226,76 @@ export default function Home() {
           </div>
         </section>
         <section id={'testimonail'}>
-          <div className='relative top-28'>Testmonail</div>
+          <div className='relative top-28 space-y-16'>
+            <div className='flex flex-col space-y-8 mt-16'>
+              <div className='h-[1.5px] w-full bg-white relative'>
+                <div className='absolute top-0 left-0 bg-gradient-to-r from-background-secondary  h-full w-full' />
+                <div className='absolute top-0 right-0 bg-gradient-to-l from-background-secondary  h-full w-full' />
+              </div>
+              <div className='flex w-full justify-center'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
+                  {DATA.testimonailSection.testimonails.map((item) => (
+                    <Card
+                      key={item.id}
+                      className='border-none bg-transparent text-center p-8'
+                    >
+                      <CardContent className='space-y-8'>
+                        <div className='flex gap-2 justify-center items-center'>
+                          <h1>{item.logo}</h1>
+                          <span className='text-white text-xl'>
+                            {item.logoName}
+                          </span>
+                        </div>
+                        <p className='text-foreground md:max-w-md'>
+                          {item.text}
+                        </p>
+                        <div className='text-foreground flex flex-col '>
+                          <div className='flex justify-center gap-2'>
+                            {item.stars.map((star, idx) => (
+                              <p key={idx} className='text-5xl text-amber-300'>
+                                {star}
+                              </p>
+                            ))}
+                          </div>
+                          <h2 className='text-lg'>{item.name}</h2>
+                          <h1 className='text-lg text-white'>
+                            {item.position}
+                          </h1>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+              <div className='h-[1.5px] w-full bg-white relative'>
+                <div className='absolute top-0 left-0 bg-gradient-to-r from-background-secondary  h-full w-full' />
+                <div className='absolute top-0 right-0 bg-gradient-to-l from-background-secondary  h-full w-full' />
+              </div>
+              <div className='flex flex-col lg:flex-row justify-center items-center gap-8'>
+                <div className='flex flex-col items-center gap-2 px-8'>
+                  <h1 className='text-7xl bg-gradient-to-tr from-primary  to-secondary bg-clip-text font-medium text-transparent '>
+                    45+
+                  </h1>
+                  <p>Happy customers</p>
+                </div>
+                <div className='flex flex-col items-center gap-2 px-8 relative'>
+                  <div className='absolute bottom-0 top-0  left-0 w-[1.5px] bg-gradient-to-t from-secondary  to-primary ' />
+                  <div className='absolute top-0 bottom-0 right-0 w-[1.5px] bg-gradient-to-t from-primary  to-secondary ' />
+
+                  <h1 className='text-7xl bg-gradient-to-tr from-primary  to-secondary bg-clip-text font-medium text-transparent '>
+                    5k+
+                  </h1>
+                  <p>Hours spent on craft</p>
+                </div>
+                <div className='flex flex-col items-center gap-2 px-8'>
+                  <h1 className='text-7xl bg-gradient-to-tr from-primary  to-secondary bg-clip-text font-medium text-transparent '>
+                    4.8
+                  </h1>
+                  <p>Review rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section id={'faqs'}>
           <div className=' relative top-28'>Faqs</div>

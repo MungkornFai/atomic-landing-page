@@ -3,11 +3,11 @@ import { Icon } from '@/components/icon';
 export const DATA = {
   heroSection: {
     title: (
-      <h1>
+      <div>
         Design work,
         <br />
         the efficient way
-      </h1>
+      </div>
     ),
     description:
       'Innovative design solutions for technology firms and emerging businesses weary of the typical aesthetic methodology. Arriving shortly.',
@@ -79,10 +79,10 @@ export const DATA = {
   howItWorksSection: {
     title: 'Top-notch design',
     description: (
-      <>
+      <p>
         Top–notch designs,
         <br /> delivered at your doorstep
-      </>
+      </p>
     ),
     cards: [
       {
@@ -105,6 +105,37 @@ export const DATA = {
       },
     ],
   },
+  testimonailSection: {
+    testimonails: [
+      {
+        id: 1,
+        logo: <Icon.loom className='size-10 text-white' />,
+        logoName: 'loom',
+        text: 'Creative, innovative and strategic. We have great achievements made together and looking to more',
+        stars: ['*', '*', '*', '*', '*'],
+        name: 'Henry Arthur',
+        position: 'Head of engineer,Loom',
+      },
+      {
+        id: 2,
+        logo: <Icon.intercom className='size-10 text-white' />,
+        logoName: 'intercom',
+        text: 'Incredible group of people and talented professionals. Focused on the development of flexible ideas',
+        stars: ['*', '*', '*', '*', '*'],
+        name: 'Jerome Bell',
+        position: 'Product Analyst,Intercom',
+      },
+      {
+        id: 3,
+        logo: <Icon.abstract className='size-10 text-white' />,
+        logoName: 'abstract',
+        text: 'A truly innovative approach to gameplay that sets this agency apart from its peers within the broader industry"',
+        stars: ['*', '*', '*', '*', '*'],
+        name: 'Elenor Pena',
+        position: 'Head of Product desighn,Abstract',
+      },
+    ],
+  },
   navbar: [
     {
       id: 1,
@@ -118,7 +149,7 @@ export const DATA = {
     },
     {
       id: 3,
-      title: 'Testminail',
+      title: 'Testimonail',
       href: '#testimonail',
     },
     {

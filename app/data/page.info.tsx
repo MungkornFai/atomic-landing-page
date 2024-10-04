@@ -79,10 +79,10 @@ export const DATA = {
   howItWorksSection: {
     title: 'Top-notch design',
     description: (
-      <p>
+      <>
         Top–notch designs,
         <br /> delivered at your doorstep
-      </p>
+      </>
     ),
     cards: [
       {
@@ -133,6 +133,42 @@ export const DATA = {
         stars: ['*', '*', '*', '*', '*'],
         name: 'Elenor Pena',
         position: 'Head of Product desighn,Abstract',
+      },
+    ],
+  },
+  faqSection: {
+    title: 'FAQs',
+    description: 'Got questions? We`ve got answers.',
+    questions: [
+      {
+        id: 1,
+        question: 'Can I use Atomic Template for commercial purposes?',
+        answer:
+          'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See more at https://www.gnu.org/licenses/gpl-3.0.html',
+      },
+      {
+        id: 2,
+        question: 'Accept the Template Usage Disclaimer',
+        answer:
+          'The graphic resources used in this template are owned by their respective creators, and their use is subject to the specified licensing terms. Users are responsible for adhering to these terms and should contact the original creators for any inquiries regarding the usage or licensing of the graphic resources.',
+      },
+      {
+        id: 3,
+        question: 'Disclaimer of Responsibility for Usage',
+        answer:
+          'The authors disclaim any liability for damages or issues arising from the use of these graphic resources outside the context of this template. End users are solely responsible for ensuring compliance with the specified licensing terms, as well as any applicable laws or regulations.',
+      },
+      {
+        id: 4,
+        question: 'Graphic Assets attribution Notice',
+        answer:
+          'We have made every effort to appropriately credit the authors and creators of the graphic resources used in this template. However, if you believe that we may have inadvertently missed or misrepresented your work, we sincerely apologize.',
+      },
+      {
+        id: 5,
+        question: 'How to contact the author of this Template?',
+        answer:
+          'For questions or clarifications, please contact hello@andreamontini.me',
       },
     ],
   },

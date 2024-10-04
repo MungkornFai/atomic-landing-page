@@ -7,6 +7,13 @@ import { poppins } from '@/app/fonts/fonts';
 import Introduce from '@/components/introduce';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 import {
   Card,
@@ -298,10 +305,87 @@ export default function Home() {
           </div>
         </section>
         <section id={'faqs'}>
-          <div className=' relative top-28'>Faqs</div>
+          <div className=' relative top-28'>
+            <div className='flex flex-col pt-40 pb-16 justify-center items-center'>
+              <Introduce>
+                <BlurFade delay={DURATION} inView>
+                  <h1 className='text-base uppercase text-[#DDFF00]'>
+                    {DATA.faqSection.title}
+                  </h1>
+                </BlurFade>
+                <BlurFade delay={DURATION * 2} inView>
+                  <p className='text-2xl lg:text[44px] text-secondary-foreground'>
+                    {DATA.faqSection.description}
+                  </p>
+                </BlurFade>
+              </Introduce>
+
+              {DATA.faqSection.questions.map((item) => (
+                <BlurFade key={item.id} className='max-w-4xl w-full'>
+                  <Accordion
+                    type='single'
+                    collapsible
+                    defaultValue={'item-1'}
+                    className=''
+                  >
+                    <AccordionItem value={`item-${item.id}`}>
+                      <AccordionTrigger className='text-white text-lg hover:no-underline'>
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent>{item.answer}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </BlurFade>
+              ))}
+            </div>
+          </div>
         </section>
         <section id={'notify'}>
-          <div className='relative top-28'>Notify</div>
+          <div className='relative '>
+            <div className='flex flex-col pt-40 pb-20 justify-center items-center'>
+              <Card className='max-w-4xl w-full py-12 px-8'>
+                <CardContent className='space-y-4'>
+                  <CardTitle className='text-3xl text-white'>
+                    Elecate the eay you source design
+                  </CardTitle>
+                  <CardDescription className='text-base text-foreground'>
+                    Get ready to start producing stunning, efficient design work
+                    without the hassles of hiring. Soon available.
+                  </CardDescription>
+                  <div className='border flex w-full py-2 px-2 rounded-full'>
+                    <input
+                      type='text'
+                      placeholder='name@gmail.com'
+                      className='flex-1 pl-8 border-none outline-none bg-transparent text-white'
+                    />
+                    <button className='bg-[#DDFF00] text-black px-8 py-4 rounded-full'>
+                      Notify
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+              <div className='w-full flex flex-col items-center mt-20 space-y-8 md:flex-row md:justify-between '>
+                <Link href={'/'}>
+                  <Image src='/logo.png' alt='logo' width={50} height={50} />
+                </Link>
+                <div className='flex'>
+                  <ul className='flex flex-col text-center gap-4 md:flex-row '>
+                    <li className='text-base hover:text-white'>Contact</li>
+                    <li className='text-base hover:text-white'>
+                      Privacy & Cookie Policy
+                    </li>
+                    <li className='text-base hover:text-white'>
+                      Terms & Conditions
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  <span className='text-white'>Mand with love by</span> Andrea
+                  Montini
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </main>
